@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>株式会社〇〇 | コーポレートサイト</title>
+    <title>有限会社〇〇製作所 | 精密金属加工・製造</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <header>
         <div class="header-container">
-            <h1 class="logo">株式会社〇〇</h1>
+            <h1 class="logo">〇〇製作所</h1>
             <nav>
                 <ul>
-                    <li><a href="#about">私たちについて</a></li>
-                    <li><a href="#services">事業内容</a></li>
-                    <li><a href="#news">お知らせ</a></li>
+                    <li><a href="#about">会社理念</a></li>
+                    <li><a href="#services">事業・技術紹介</a></li>
+                    <li><a href="#company">会社概要</a></li>
                     <li><a href="#contact">お問い合わせ</a></li>
                 </ul>
             </nav>
@@ -24,18 +24,82 @@
 
     <section class="main-visual">
         <div class="mv-text">
-            <h2>未来を、ともに創る。</h2>
-            <p>ここに会社のキャッチコピーや強みを一言で書きます。</p>
+            <h2>確かな技術で、モノづくりの未来を支える。</h2>
+            <p>創業〇〇年。私たちはミクロン単位の精度にこだわり、お客様の課題を解決します。</p>
         </div>
     </section>
 
     <section id="about" class="section">
-        <h2>ABOUT</h2>
-        <p>会社についての紹介文や、理念をここに記載します。</p>
+        <div class="container">
+            <span class="en-title">PHILOSOPHY</span>
+            <h2>会社理念</h2>
+            <p class="lead-text">「品質第一」を掲げ、熟練の職人技と最新鋭の設備を融合させ、日々技術の研鑽に励んでいます。小さな部品ひとつにも妥協せず、社会のインフラを支え続けます。</p>
+        </div>
+    </section>
+
+    <section id="services" class="section bg-gray">
+        <div class="container">
+            <span class="en-title">SERVICES</span>
+            <h2>事業・技術紹介</h2>
+            
+            <div class="grid">
+                <div class="grid-item">
+                    <div class="service-image-placeholder">【技術画像 1】</div>
+                    <h3>精密金属加工</h3>
+                    <p>マシニングセンタやNC旋盤を用いた、難削材の高度な削り出し加工に対応。試作から量産まで承ります。</p>
+                </div>
+                <div class="grid-item">
+                    <div class="service-image-placeholder">【技術画像 2】</div>
+                    <h3>品質管理体制</h3>
+                    <p>三次元測定機をはじめとする検査設備を導入。徹底した検品により、不良品ゼロを追求しています。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="company" class="section">
+        <div class="container">
+            <span class="en-title">COMPANY</span>
+            <h2>会社概要</h2>
+            
+            <table class="company-table">
+                <tr>
+                    <th>会社名</th>
+                    <td>有限会社〇〇製作所</td>
+                </tr>
+                <tr>
+                    <th>設立</th>
+                    <td>1985年〇月〇日</td>
+                </tr>
+                <tr>
+                    <th>代表者</th>
+                    <td>代表取締役 〇〇 〇〇</td>
+                </tr>
+                <tr>
+                    <th>所在地</th>
+                    <td>〒000-0000 〇〇県〇〇市〇〇 1-2-3</td>
+                </tr>
+                <tr>
+                    <th>主要取引先</th>
+                    <td>〇〇株式会社、〇〇電機株式会社（主要な取引先を書くと信頼性が増します）</td>
+                </tr>
+            </table>
+        </div>
+    </section>
+
+    <section id="contact" class="section bg-dark">
+        <div class="container">
+            <h2>製品のご相談・お見積りはこちら</h2>
+            <p>図面データからの試作相談など、お気軽にお問い合わせください。</p>
+            <p class="tel">TEL: 00-0000-0000</p>
+            <a href="mailto:info@example.com" class="btn">メールでのお問い合わせ</a>
+        </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 株式会社〇〇 All Rights Reserved.</p>
+        <div class="container">
+            <p>&copy; 2026 有限会社〇〇製作所 All Rights Reserved.</p>
+        </div>
     </footer>
 
 </body>

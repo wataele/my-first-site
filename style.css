@@ -1,26 +1,39 @@
-/* 全体のリセットと基本設定 */
+/* ==========================================================================
+   全体のリセットと共通設定
+   ========================================================================== */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box; /* 線の太さやパディングを幅に含める設定（レイアウト崩れ防止） */
 }
 
 body {
+    /* 【変更箇所】フォント（明朝体っぽくしたい場合は、最初を "YuMincho", "游明朝" に変更） */
     font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
-    color: #333;
-    line-height: 1.6;
+    /* 【変更箇所】全体の文字の色（完全な黒ではなく、濃いグレーにすることで高級感・信頼感が出ます） */
+    color: #2b303a; 
+    line-height: 1.8; /* 行間。数値が大きいほど、文章がゆったりして読みやすくなります */
+    background-color: #ffffff;
 }
 
 a {
-    text-decoration: none;
+    text-decoration: none; /* リンクの下線を消す */
     color: inherit;
 }
 
-/* ヘッダー */
+.container {
+    max-width: 1000px; /* 【変更箇所】コンテンツの横幅の最大値。製造業サイトは1000px前後の少し引き締まった幅が誠実に見えます */
+    margin: 0 auto;    /* 左右中央揃え */
+    padding: 0 20px;   /* スマホ表示のときの左右の余白 */
+}
+
+/* ==========================================================================
+   ヘッダー（ナビゲーション）
+   ========================================================================== */
 header {
     background-color: #ffffff;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    position: sticky;
+    border-bottom: 1px solid #e2e8f0; /* 【変更箇所】メニュー下のうっすらとした区切り線 */
+    position: sticky; /* 画面の一番上にメニューを固定する */
     top: 0;
     z-index: 100;
 }
@@ -29,14 +42,17 @@ header {
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* 社名とメニューを左右の端に振り分ける */
     align-items: center;
-    padding: 15px 20px;
+    padding: 20px;
 }
 
 .logo {
-    font-size: 24px;
-    color: #003366; /* 企業のテーマカラー（例：ネイビー） */
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    /* 【変更箇所】社名の文字色。製造業で最も信頼される「濃いネイビー」を設定 */
+    color: #0f2c59; 
 }
 
 nav ul {
@@ -45,42 +61,179 @@ nav ul {
 }
 
 nav ul li {
-    margin-left: 20px;
+    margin-left: 30px; /* メニューの文字同士の間隔 */
 }
 
+nav ul li a {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* 【変更箇所】メニューにマウスを乗せたときの色が変わります */
 nav ul li a:hover {
-    color: #003366;
+    color: #4f709c; 
 }
 
-/* メインビジュアル */
+/* ==========================================================================
+   メインビジュアル
+   ========================================================================== */
 .main-visual {
-    background-color: #f4f4f4; /* 本番はここに背景画像を設定 */
-    height: 60vh;
+    /* 【変更箇所】背景色。画像を使う場合はここに url('images/factory.jpg') center/cover no-repeat; と書きます */
+    background-color: #0f2c59; 
+    height: 45vh; /* 【変更箇所】トップエリアの高さ。画面全体の45%に設定（画像控えめのため、低く設定） */
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
+    color: #ffffff; /* 文字を白にする */
 }
 
 .mv-text h2 {
-    font-size: 36px;
-    margin-bottom: 10px;
+    font-size: 28px; /* 【変更箇所】キャッチコピーの文字の大きさ */
+    margin-bottom: 15px;
+    font-weight: 600;
     letter-spacing: 2px;
 }
 
-/* 各セクションの共通スタイル */
+.mv-text p {
+    font-size: 15px;
+    color: #d8e3f4; /* 【変更箇所】少し青みがかった薄いグレー（白より文字が浮かない） */
+}
+
+/* ==========================================================================
+   各セクション共通
+   ========================================================================== */
 .section {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 60px 20px;
+    padding: 80px 0; /* 【変更箇所】セクション上下の余白。ここを広く取ると「すっきりした高級感」が出ます */
     text-align: center;
+}
+
+/* 【変更箇所】背景が薄いグレーのエリア（セクションごとに白・グレー交互にして見やすくする） */
+.bg-gray {
+    background-color: #f8fafc; 
+}
+
+.en-title {
+    display: block;
+    font-size: 12px;
+    letter-spacing: 3px;
+    /* 【変更箇所】英語の見出しの色（薄くして目立たせない） */
+    color: #94a3b8; 
+    margin-bottom: 5px;
+}
+
+.section h2 {
+    font-size: 24px;
+    color: #0f2c59;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+/* ==========================================================================
+   コンテンツ別スタイル（理念、事業紹介、会社概要）
+   ========================================================================== */
+/* 会社理念の文章 */
+.lead-text {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: left; /* 長文は左寄せにする方が圧倒的に誠実・端正に見えます */
+    font-size: 16px;
+}
+
+/* 事業紹介の2段組（グリッド） */
+.grid {
+    display: flex;
+    gap: 40px; /* 2つのボックスの間の隙間 */
+}
+
+.grid-item {
+    flex: 1; /* 均等に2等分する */
+    background: #ffffff;
+    padding: 30px;
+    border: 1px solid #e2e8f0; /* ボックスを囲う薄い線 */
+    text-align: left;
+}
+
+/* 【変更箇所】画像の代わりに置く、シンプルな四角形の色と高さ */
+.service-image-placeholder {
+    height: 180px;
+    background-color: #edf2f7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #a0aec0;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.grid-item h3 {
+    font-size: 18px;
+    color: #0f2c59;
+    margin-bottom: 10px;
+}
+
+/* 会社概要の表（テーブル） */
+.company-table {
+    width: 100%;
+    max-width: 750px;
+    margin: 0 auto;
+    border-collapse: collapse; /* 線の重なりを防ぐ */
+    text-align: left;
+}
+
+.company-table th, .company-table td {
+    padding: 15px 20px;
+    border-bottom: 1px solid #e2e8f0; /* 【変更箇所】表の横線 */
+}
+
+/* 【変更箇所】表の左側（項目名）の幅と太さ、背景色 */
+.company-table th {
+    width: 25%;
+    font-weight: bold;
+    color: #0f2c59;
+    background-color: #f8fafc; 
+}
+
+/* ==========================================================================
+   お問い合わせエリア ＆ フッター
+   ========================================================================== */
+/* 【変更箇所】お問い合わせエリア。ここだけ濃い色にして、目を引くようにしています */
+.bg-dark {
+    background-color: #0f2c59;
+    color: #ffffff;
+}
+
+.bg-dark h2 {
+    color: #ffffff;
+}
+
+.bg-dark .tel {
+    font-size: 32px; /* 【変更箇所】電話番号の大きさ。パッと見てすぐわかるように大きくします */
+    font-weight: bold;
+    margin: 20px 0;
+    letter-spacing: 1px;
+}
+
+/* 【変更箇所】お問い合わせボタンの色、丸み、サイズ */
+.btn {
+    display: inline-block;
+    background-color: #ffffff;
+    color: #0f2c59;
+    padding: 15px 40px;
+    font-weight: bold;
+    border-radius: 4px; /* 四角形の角の丸み（4pxは少しだけ角を丸くして上品にする設定） */
+    transition: 0.3s; /* マウスを乗せたときにじわっと変わる効果 */
+}
+
+/* 【変更箇所】ボタンにマウスを乗せたときに、少し半透明にする効果 */
+.btn:hover {
+    background-color: #e2e8f0;
 }
 
 /* フッター */
 footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 20px;
-    font-size: 14px;
+    background-color: #0b1f3f; /* 【変更箇所】フッターはメニューやヘッダーよりさらに一段暗い色 */
+    color: #94a3b8;
+    padding: 30px 0;
+    font-size: 13px;
 }
