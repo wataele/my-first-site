@@ -1,0 +1,19 @@
+body {
+    /* 目を引く鮮やかな背景色 */
+    background-color: #ff00ff; 
+}
+
+.card {
+    /* 枠線を極太の黄色にして目立たせる */
+    background: #ffff00;
+    border: 10px dashed #000000;
+    padding: 50px;
+    margin: 50px;
+}
+
+h1 {
+    /* 文字色を鮮やかな青にして、さらに大きく */
+    color: #0000ff;
+    font-size: 50px;
+    text-transform: uppercase;
+}
