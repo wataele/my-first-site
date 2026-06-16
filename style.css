@@ -1,19 +1,86 @@
+/* 全体のリセットと基本設定 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-    /* 目を引く鮮やかな背景色 */
-    background-color: #ff00ff; 
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+    color: #333;
+    line-height: 1.6;
 }
 
-.card {
-    /* 枠線を極太の黄色にして目立たせる */
-    background: #ffff00;
-    border: 10px dashed #000000;
-    padding: 50px;
-    margin: 50px;
+a {
+    text-decoration: none;
+    color: inherit;
 }
 
-h1 {
-    /* 文字色を鮮やかな青にして、さらに大きく */
-    color: #0000ff;
-    font-size: 50px;
-    text-transform: uppercase;
+/* ヘッダー */
+header {
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+.logo {
+    font-size: 24px;
+    color: #003366; /* 企業のテーマカラー（例：ネイビー） */
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a:hover {
+    color: #003366;
+}
+
+/* メインビジュアル */
+.main-visual {
+    background-color: #f4f4f4; /* 本番はここに背景画像を設定 */
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.mv-text h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+/* 各セクションの共通スタイル */
+.section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+/* フッター */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
 }
