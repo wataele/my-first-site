@@ -166,6 +166,15 @@ nav ul li a:hover {
     margin-bottom: 20px;
 }
 
+/* 【変更箇所】新しく配置した画像の見た目を整える設定です */
+.service-image {
+    width: 100%;          /* 横幅を、親である四角い枠（grid-item）の幅いっぱいに合わせます */
+    height: 180px;        /* 【変更箇所】画像の高さ。これまでのプレースホルダーと同じ高さに固定します */
+    object-fit: cover;    /* 【重要】画像の縦横比を崩さずに、指定したサイズ（height: 180px）に綺麗にトリミング（切り抜き）して収める魔法の設定です */
+    margin-bottom: 20px;  /* 画像の下にある文字（h3タグ）との間に、少し隙間（余白）を作ります */
+    border: 1px solid #e2e8f0; /* 画像の周りにうっすらとしたグレーの線を付け、端正な印象にします */
+}
+
 .grid-item h3 {
     font-size: 18px;
     color: #0f2c59;
